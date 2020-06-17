@@ -15,6 +15,10 @@ class Encryption implements EncryptionInterface {
         $this->_engine->connect();
     }
 
+    public function close() {
+        $this->_engine->close();
+    }
+
     public function setHost(string $host) {
         $this->_engine->setHost($host);
     }

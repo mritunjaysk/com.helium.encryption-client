@@ -5,6 +5,8 @@ interface EncryptionInterface {
 
     public function connect();
 
+    public function close();
+
     public function setHost(string $host);
 
     public function setAlgorithm(string $algorithm);

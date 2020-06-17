@@ -3,6 +3,9 @@
 namespace helium\encryption\engines;
 
 use helium\encryption\EncryptionInterface;
+use helium\encryption\exceptions\EncryptionError;
+use helium\encryption\exceptions\InvalidResponse;
+use helium\encryption\exceptions\InvalidStatus;
 
 class TextTalkEngine implements EncryptionInterface {
 
@@ -41,14 +44,18 @@ class TextTalkEngine implements EncryptionInterface {
 
         $data = $this->_formatMessage('encrypt', $message, $algorithm, $password);
 
-        return $this->_send(json_encode($data));
+        $response = $this->_send(json_encode($data));
+
+        return $this->_processResponse($response);
     }
 
     public function decrypt(string $message, ?string $algorithm  = null, ?string $password = null) : string {
 
         $data = $this->_formatMessage('decrypt', $message, $algorithm, $password);
         
-        return $this->_send(json_encode($data));
+        $response = $this->_send(json_encode($data));
+
+        return $this->_processResponse($response);
     }
 
     public function close() {
@@ -80,6 +87,27 @@ class TextTalkEngine implements EncryptionInterface {
         }
 
         return $data;
-
     }
+
+    private function _processResponse(string $json) {
+
+        $response = json_decode($json, true);
+
+        if(json_last_error() != JSON_ERROR_NONE){
+            throw new InvalidResponse("Invalid response from server. Response should be JSON. The following string was passed: " . $json);
+        }
+
+        $allowed_status = ['success', 'error'];
+
+        if(!isset($response['status']) || !in_array($response['status'], $allowed_status)) {
+            throw new InvalidStatus('An incorrect status was return from the server.');
+        }
+
+        if($response['status'] == 'error') {
+            throw new EncryptionError($response['message']);
+        }
+
+        return $response['content'];
+    }
+
 }
