@@ -10,14 +10,19 @@ This library details how to connect to the encryption microservice for encryptin
 
 The library can be installed by using one fo the following:
  1. Downloaded
+
  2. Cloned with git 
+
  3. Installed via composer 
 
 ## How To Use
 When the code is downloaded or cloned into a project, you can access the Encryption library with an engine. The parameters you will need to know are:
  - **host:** The host for the microservice whenc connectings.
+
  - **content:** The string of the text you want to encrypt/decrypt
+
   - **password:** An OPTIONAL password you can use with encryption/decryption
+  
 - **algorithm:** The algorithm to use for the encyrption
 
 Below demonstates different ways the library can be used.
