@@ -24,7 +24,7 @@ When the code is downloaded or cloned into a project, you can access the Encrypt
 
   - **password:** An OPTIONAL password you can use with encryption/decryption
 
-- **algorithm:** The algorithm to use for the encyrption
+- **algorithm:** An OPTIONAL algorithm to use for the encyrption
 
 Below demonstates different ways the library can be used.
 
