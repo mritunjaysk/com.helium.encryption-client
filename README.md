@@ -25,8 +25,8 @@ Below demonstates different ways the library can be used.
 ### Example 1
 
     <?php
-    use helium\encryption\engines\TextTalkEngine;
-    use helium\encryption\Encryption;
+    use helium\microservices\encryption\engines\TextTalkEngine;
+    use helium\microservices\encryption\Encryption;
     
     $host = 'ws://localhost:7050';
     $password = 'somepassword'; //Optional
@@ -45,8 +45,8 @@ Below demonstates different ways the library can be used.
 ### Example 2
 
     <?php
-    use helium\encryption\engines\TextTalkEngine;
-    use helium\encryption\Encryption;
+    use helium\microservices\encryption\engines\TextTalkEngine;
+    use helium\microservices\encryption\Encryption;
     
     //Example 2
     $host = 'ws://localhost:7050';
@@ -68,8 +68,8 @@ Below demonstates different ways the library can be used.
 
 ### Example 3
 
-    use helium\encryption\engines\TextTalkEngine;
-    use helium\encryption\Encryption;
+    use helium\microservices\encryption\engines\TextTalkEngine;
+    use helium\microservices\encryption\Encryption;
     
     $host = 'ws://localhost:7050';
     $password = 'somepassword'; //Optional
@@ -89,9 +89,9 @@ Below demonstates different ways the library can be used.
 ### Example With Error Handling
 
     <?php
-    use helium\encryption\exceptions\EncryptionError;
-    use helium\encryption\engines\TextTalkEngine;
-    use helium\encryption\Encryption;
+    use helium\microservices\encryption\exceptions\EncryptionError;
+    use helium\microservices\encryption\engines\TextTalkEngine;
+    use helium\microservices\encryption\Encryption;
     
     $host = 'ws://localhost:7050';
     

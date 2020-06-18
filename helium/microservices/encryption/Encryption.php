@@ -1,7 +1,7 @@
 <?php
-namespace helium\encryption;
+namespace helium\microservices\encryption;
 
-use helium\encryption\EncryptionInterface;
+use helium\microservices\encryption\EncryptionInterface;
 
 class Encryption implements EncryptionInterface {
     

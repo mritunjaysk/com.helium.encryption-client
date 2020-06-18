@@ -1,11 +1,11 @@
 <?php
 
-namespace helium\encryption\engines;
+namespace helium\microservices\encryption\engines;
 
-use helium\encryption\EncryptionInterface;
-use helium\encryption\exceptions\EncryptionError;
-use helium\encryption\exceptions\InvalidResponse;
-use helium\encryption\exceptions\InvalidStatus;
+use helium\microservices\encryption\EncryptionInterface;
+use helium\microservices\encryption\exceptions\EncryptionError;
+use helium\microservices\encryption\exceptions\InvalidResponse;
+use helium\microservices\encryption\exceptions\InvalidStatus;
 
 class TextTalkEngine implements EncryptionInterface {
 

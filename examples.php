@@ -1,14 +1,14 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-require('helium/encryption/EncryptionInterface.php');
-require('helium/encryption/engines/TextTalkEngine.php');
-require('helium/encryption/Encryption.php');
-require('helium/encryption/exceptions/EncryptionError.php');
+require('helium/microservices/encryption/EncryptionInterface.php');
+require('helium/microservices/encryption/engines/TextTalkEngine.php');
+require('helium/microservices/encryption/Encryption.php');
+require('helium/microservices/encryption/exceptions/EncryptionError.php');
 
-use helium\encryption\exceptions\EncryptionError;
-use helium\encryption\engines\TextTalkEngine;
-use helium\encryption\Encryption;
+use helium\microservices\encryption\exceptions\EncryptionError;
+use helium\microservices\encryption\engines\TextTalkEngine;
+use helium\microservices\encryption\Encryption;
 
 
 //Example 1

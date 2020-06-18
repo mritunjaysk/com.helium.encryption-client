@@ -1,5 +1,5 @@
 <?php
-namespace helium\encryption;
+namespace helium\microservices\encryption;
 
 interface EncryptionInterface {
 
