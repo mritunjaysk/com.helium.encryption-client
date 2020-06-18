@@ -9,6 +9,7 @@ This library details how to connect to the encryption microservice for encryptin
 ## Installing
 
 The library can be installed by using one fo the following:
+
  1. Downloaded
 
  2. Cloned with git 
@@ -18,7 +19,7 @@ The library can be installed by using one fo the following:
 ## How To Use
 When the code is downloaded or cloned into a project, you can access the Encryption library with an engine. The parameters you will need to know are:
 
- - **host:** The host for the microservice whenc connectings.
+ - **host:** The host for the microservice when connecting. Because its a websocket, it will typically be `ws://host:7050` to connect to a websocket over port 7050.
 
  - **content:** The string of the text you want to encrypt/decrypt
 
