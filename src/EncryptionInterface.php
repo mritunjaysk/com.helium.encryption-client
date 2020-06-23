@@ -1,7 +1,9 @@
 <?php
 namespace Helium\Encryption;
 
-interface EncryptionInterface {
+use Helium\ServiceManager\EngineContract;
+
+interface EncryptionInterface extends EngineContract {
 
     public function connect();
 

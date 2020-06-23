@@ -6,6 +6,7 @@ use Helium\Encryption\EncryptionInterface;
 use Helium\Encryption\Exceptions\EncryptionError;
 use Helium\Encryption\Exceptions\InvalidResponse;
 use Helium\Encryption\Exceptions\InvalidStatus;
+use WebSocket\Client;
 
 class TextTalkEngine implements EncryptionInterface {
 
@@ -24,7 +25,7 @@ class TextTalkEngine implements EncryptionInterface {
     }
 
     public function connect() {
-        $this->_client = new \WebSocket\Client($this->_host);
+        $this->_client = new Client($this->_host);
 
     }
 
