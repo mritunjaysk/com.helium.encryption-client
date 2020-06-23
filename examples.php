@@ -1,15 +1,9 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-require('helium/microservices/encryption/EncryptionInterface.php');
-require('helium/microservices/encryption/engines/TextTalkEngine.php');
-require('helium/microservices/encryption/Encryption.php');
-require('helium/microservices/encryption/exceptions/EncryptionError.php');
-
-use helium\microservices\encryption\exceptions\EncryptionError;
-use helium\microservices\encryption\engines\TextTalkEngine;
-use helium\microservices\encryption\Encryption;
-
+use Helium\Encryption\Exceptions\EncryptionError;
+use Helium\Encryption\Engines\TextTalkEngine;
+use Helium\Encryption\Encryption;
 
 //Example 1
 $host = 'ws://localhost:7050';

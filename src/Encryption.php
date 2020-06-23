@@ -1,7 +1,7 @@
 <?php
-namespace helium\microservices\encryption;
+namespace Helium\Encryption;
 
-use helium\microservices\encryption\EncryptionInterface;
+use Helium\Encryption\EncryptionInterface;
 
 class Encryption implements EncryptionInterface {
     
@@ -37,7 +37,5 @@ class Encryption implements EncryptionInterface {
 
     public function decrypt(string $message, ?string $algorithm  = null, ?string $password = null) : string {
         return $this->_engine->decrypt($message, $algorithm, $password);
-
     }
-
 }

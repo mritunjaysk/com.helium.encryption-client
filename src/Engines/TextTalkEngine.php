@@ -1,11 +1,11 @@
 <?php
 
-namespace helium\microservices\encryption\engines;
+namespace Helium\Encryption\Engines;
 
-use helium\microservices\encryption\EncryptionInterface;
-use helium\microservices\encryption\exceptions\EncryptionError;
-use helium\microservices\encryption\exceptions\InvalidResponse;
-use helium\microservices\encryption\exceptions\InvalidStatus;
+use Helium\Encryption\EncryptionInterface;
+use Helium\Encryption\Exceptions\EncryptionError;
+use Helium\Encryption\Exceptions\InvalidResponse;
+use Helium\Encryption\Exceptions\InvalidStatus;
 
 class TextTalkEngine implements EncryptionInterface {
 
@@ -67,7 +67,7 @@ class TextTalkEngine implements EncryptionInterface {
         return $this->_client->receive();
     }
 
-    private function _formatMessage(string $command, string $message, ?string $algorithm  = null, ?string $password ) : array {
+    private function _formatMessage(string $command, string $message, ?string $algorithm  = null, ?string $password = null) : array {
 
         $data = [
             'command' => $command,
