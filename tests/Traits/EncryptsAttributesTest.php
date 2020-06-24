@@ -113,6 +113,7 @@ class EncryptsAttributesTest extends TestCase
         ];
 
         try {
+            $model->flag = true;
             $model->update($updateAttributes);
 
             $this->assertTrue(false);
