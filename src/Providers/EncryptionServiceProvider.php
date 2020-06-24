@@ -13,7 +13,7 @@ class EncryptionServiceProvider extends ServiceProvider
         $this->app->singleton(Encryption::class, function ($app) {
             $encryption = new Encryption('text-talk');
             $encryption->extend('text-talk', new TextTalkEngine(
-                config('encryption.host', 'ws://encryption.heliumservices.local'),
+                config('encryption.host', 'ws://localhost:7050'),
                 config('encryption.algorithm', 'aes-256-cbc'),
                 config('encryption.password')
             ));
