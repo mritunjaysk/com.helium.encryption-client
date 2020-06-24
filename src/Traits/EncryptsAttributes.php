@@ -11,20 +11,22 @@ trait EncryptsAttributes
 
     public static function bootEncryptsAttributes()
     {
-        static::retrieved(function(Model $model) {
-            $model->decryptAttributes();
-        });
+        static::registerModelEvent('booted', function (Model $model) {
+            static::retrieved(function(Model $model) {
+                $model->decryptAttributes();
+            });
 
-        static::saving(function(Model $model) {
-            $model->encryptAttributes();
-        });
+            static::saving(function(Model $model) {
+                $model->encryptAttributes();
+            });
 
-        static::saved(function(Model $model) {
-            $model->decryptAttributes();
-        });
+            static::saved(function(Model $model) {
+                $model->decryptAttributes();
+            });
 
-        static::saveFailed(function(Model $model) {
-            $model->decryptAttributes();
+            static::saveFailed(function(Model $model) {
+                $model->decryptAttributes();
+            });
         });
     }
 
