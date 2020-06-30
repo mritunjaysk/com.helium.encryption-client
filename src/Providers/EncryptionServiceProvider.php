@@ -10,6 +10,8 @@ class EncryptionServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../config/encryption.php', 'encryption');
+
         $this->app->singleton(Encryption::class, function ($app) {
             $encryption = new Encryption('text-talk');
             $encryption->extend('text-talk', new TextTalkEngine(
@@ -27,7 +29,7 @@ class EncryptionServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/encryption.php' => config_path('helpers.php')
+            __DIR__ . '/../config/encryption.php' => config_path('encryption.php')
         ], 'config');
     }
 }
